@@ -150,19 +150,4 @@ class TareaController extends Controller
             ->route('tareas.index')
             ->with('success', 'La tarea fue eliminada.');
     }
-
-    public function actualizarEstado(Request $request, Tarea $tarea)
-    {
-        $this->authorize('changeStatus', $tarea);
-
-        $request->validate([
-            'estado' => 'required|in:pendiente,en_progreso,completada',
-        ]);
-
-        $tarea->update([
-            'estado' => $request->estado,
-        ]);
-
-        return back()->with('success', 'Estado actualizado correctamente.');
-    }
 }
