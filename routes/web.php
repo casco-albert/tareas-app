@@ -12,12 +12,5 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
-
     Route::resource('tareas', TareaController::class);
-
-    Route::patch(
-        '/tareas/{tarea}/estado',
-        [TareaController::class, 'actualizarEstado']
-    )->name('tareas.estado');
-
 });
