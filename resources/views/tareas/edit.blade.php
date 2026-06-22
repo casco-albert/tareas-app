@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="descripcion" class="form-label">Descripción</label>
+                            <label for="descripcion" class="form-label">Descripción y comentarios</label>
 
                             <textarea
                                 name="descripcion"

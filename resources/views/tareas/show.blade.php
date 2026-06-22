@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <strong>Descripción</strong>
+                        <strong>Descripción y comentarios</strong>
                         <div class="border rounded p-3 bg-light">
                             {{ $tarea->descripcion ?: 'Sin descripción' }}
                         </div>
