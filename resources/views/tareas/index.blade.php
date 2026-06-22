@@ -8,7 +8,26 @@
         Nueva tarea
     </a>
 </div>
+<form method="GET" action="{{ route('tareas.index') }}" class="mb-3">
+    <div class="row g-2">
 
+        <div class="col-12 col-md-10">
+            <input
+                type="text"
+                name="buscar"
+                class="form-control"
+                placeholder="Buscar por título o descripción..."
+                value="{{ request('buscar') }}">
+        </div>
+
+        <div class="col-12 col-md-2 d-grid">
+            <button class="btn btn-primary">
+                Buscar
+            </button>
+        </div>
+
+    </div>
+</form>
 @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}

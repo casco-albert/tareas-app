@@ -34,7 +34,12 @@ class TareaController extends Controller
         }
 
         if ($request->filled('buscar')) {
-            $query->where('titulo', 'like', '%' . $request->buscar . '%');
+            $buscar = $request->buscar;
+
+            $query->where(function ($q) use ($buscar) {
+                $q->where('titulo', 'like', "%$buscar%")
+                ->orWhere('descripcion', 'like', "%$buscar%");
+            });
         }
 
         $tareas = $query->latest()->paginate(10)->withQueryString();
